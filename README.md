@@ -886,3 +886,45 @@ useful log too
 ```java
         log.trace("Transaction {} is {}", TransactionSynchronizationManager.getCurrentTransactionName(), TransactionSynchronizationManager.isActualTransactionActive());
 ```
+
+```properties
+
+#logging.level.com.zaxxer.hikari.HikariConfig=TRACE
+#logging.level.com.zaxxer.hikari=TRACE
+#
+#spring.datasource.hikari.leak-detection-threshold=2000
+
+#logging.level.org.springframework.orm.jpa=DEBUG
+#logging.level.org.springframework.transaction=DEBUG
+#
+#
+#logging.level.io.hypersistence.utils.hibernate.query=DEBUG
+
+spring.jpa.properties.hibernate.generate_statistics=true
+#logging.level.org.hibernate.stat=debug
+#logging.level.org.hibernate.engine.internal.StatisticalLoggingSessionEventListener=info
+#logging.level.org.hibernate=INFO
+#spring.jpa.properties.hibernate.session.events.auto=fr.njj.galaxion.account.config.CustomSessionEventListener
+
+#spring.jpa.properties.hibernate.connection.provider_class=fr.njj.galaxion.account.config.FlexyPoolHibernateConnectionProvider
+
+
+decorator.datasource.flexy-pool.threshold.connection.acquire=-1
+decorator.datasource.flexy-pool.threshold.connection.lease=0
+#decorator.datasource.flexy-pool.metrics.reporter.jmx.auto-start=true
+#
+#spring.jmx.enabled=true
+#
+#spring.datasource.hikari.register-mbeans = true
+
+spring.jpa.properties.hibernate.order_updates=true
+spring.jpa.properties.hibernate.jdbc.batch_size=30
+
+
+#decorator.datasource.p6spy.log-format=%(currentTime) |%(executionTime)|%(category)|connection%(connectionId)|%(sqlSingleLine)
+
+
+logging.level.org.springframework.transaction.interceptor=TRACE
+
+spring.quartz.auto-startup=false
+```
