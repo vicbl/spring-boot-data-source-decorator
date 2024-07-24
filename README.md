@@ -880,3 +880,9 @@ public class DatabaseConnectionConfiguration {
 }
 
 ```
+
+
+useful log too 
+```java
+        log.trace("Transaction {} is {}", TransactionSynchronizationManager.getCurrentTransactionName(), TransactionSynchronizationManager.isActualTransactionActive());
+```
